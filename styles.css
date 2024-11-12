@@ -303,15 +303,17 @@ p {
     border-top: none;
     border-right: none;
     border-bottom: none;
-    border-radius: 5rem;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
 }
 
 .c-right {
     border-right: 3px solid var(--color_1);
     border-top: none;
-    border-right: none;
+    border-left: none;
     border-bottom: none;
-    border-radius: 5rem;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
 }
 
 .img-box {
