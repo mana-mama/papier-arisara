@@ -1,4 +1,11 @@
 let mode = 0;
+let toggle_button = document.querySelector('#checkbox');
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    SwitchLightDarkMode();
+    toggle_button.checked = true;
+}
+
 function SwitchLightDarkMode() {
     if (mode == 0) {
         document.querySelector(':root').style.setProperty('--color_1', "#B9E5E8");
