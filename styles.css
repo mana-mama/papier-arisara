@@ -300,11 +300,17 @@ p {
 
 .c-left {
     border-left: 3px solid var(--color_1);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
     border-radius: 5rem;
 }
 
 .c-right {
     border-right: 3px solid var(--color_1);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
     border-radius: 5rem;
 }
 
