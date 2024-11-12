@@ -32,12 +32,12 @@ function imgFull(img) {
     img.classList.toggle('img-box-active');
     setTimeout (function () {
         img.classList.remove('img-box-active');
-    }, 2000) 
+    }, 2000);
 }
 
 function paperFull(img) {
     img.classList.toggle('paper-con-active');
     setTimeout (function () {
         img.classList.remove('paper-con-active');
-    }, 2000) 
+    }, 2000);
 }
