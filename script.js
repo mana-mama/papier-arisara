@@ -1,3 +1,6 @@
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 let mode = 0;
 let toggle_button = document.querySelector('#checkbox');
 

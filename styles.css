@@ -430,9 +430,10 @@ p {
         left: auto;
         right: 0;
         width: 20vw;
-        height: 100vh;
         z-index: 1;
         background: var(--color_4);
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
     }
 
     header .link-con a:hover {
