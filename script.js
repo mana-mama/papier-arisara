@@ -1,12 +1,3 @@
-// function setVhUnit() {
-//     let vh = window.innerHeight * 0.01;
-//     document.documentElement.style.setProperty('--vh', `${vh}px`);
-// }
-
-// window.addEventListener('resize', setVhUnit);
-// window.addEventListener('orientationchange', setVhUnit);
-// setVhUnit();
-
 let mode = 0;
 let toggle_button = document.querySelector('#checkbox');
 
