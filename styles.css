@@ -430,6 +430,7 @@ p {
         left: auto;
         right: 0;
         width: 20vw;
+        height: 100vh;
         z-index: 1;
         background: var(--color_4);
     }
