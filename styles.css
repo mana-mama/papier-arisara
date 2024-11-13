@@ -109,10 +109,11 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
-    height: 100dvh;
+    height: 105vh;
+    height: 105dvh;
     width: 10vw;
     padding-inline: 1rem;
+    padding-bottom: 5vh;
     border-right: 1px solid var(--color_1);
     background: var(--color_5);
 
