@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Paper Arisara Pastry Chef</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="pic/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page fade-in-short">
+        <div class="bg"></div>
+        <h1 class="name">Paper Arisara</h1>
+        <div class="navigation-bar">
+            <a href="index.html" class="nav" id="one">Home</a>
+            <a href="own-collections.html" class="nav" id="two">Own Collections</a>
+            <a href="dessert-collabs.html" class="nav active" id="three">Dessert Collaborations</a>
+            <a href="gift-collabs.html" class="nav" id="four">Gifts Collaborations</a>
+            <a href="consulted-desserts.html" class="nav" id="five">Consulted Desserts</a>
+            <a href="press.html" class="nav" id="six">Press</a>
+            <a href="about-me.html" class="nav" id="six">About Me</a>
+            <a href="contacts.html" class="nav" id="seven">Contacts</a>
+        </div>
+        
+        <div class="big-slides fade-in-long">
+            <div class="transparent-bg" onclick="hideImg()"></div>
+            <div class="slide three" id="three">
+                <div class="image hoverable landscape michelin" onclick="showImgof(this)">
+                    <img src="pic/6.png" alt="paper arisara michelin dessert">
+                    <h3 class="pic-name">MICHELIN GUIDE</h3>
+                </div>
+                <div class="image hoverable landscape magnum" onclick="showImgof(this)">
+                    <img src="pic/7.png" alt="paper arisara magnum dessert">
+                    <h3 class="pic-name">MAGNUM</h3>
+                </div>
+                <div class="image hoverable portrait flb" onclick="showImgof(this)">
+                    <img src="pic/15.png" alt="paper arisara fully baked">
+                    <h3 class="pic-name">FULLY BAKED</h3>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

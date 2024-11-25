@@ -1,43 +1,31 @@
-let mode = 0;
-let toggle_button = document.querySelector('#checkbox');
+let transparent_bg = document.querySelector('.transparent-bg');
+var showing_now;
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    SwitchLightDarkMode();
-    toggle_button.checked = true;
+
+let all_videos = document.querySelectorAll('video');
+for (i=0; i<all_videos.length; i++) {
+    all_videos[i].playbackRate = 0.5;
 }
 
-function SwitchLightDarkMode() {
-    if (mode == 0) {
-        document.querySelector(':root').style.setProperty('--color_1', "#B9E5E8");
-        document.querySelector(':root').style.setProperty('--color_3', "#DFF2EB");
-        document.querySelector(':root').style.setProperty('--color_4', "#4A4947");
-        document.querySelector(':root').style.setProperty('--color_5', "#000");
-        document.querySelector(':root').style.setProperty('--color_6', "#fff");
-        mode = 1;
-        document.querySelector('.fa-sun').classList.remove('active');
-        document.querySelector('.fa-moon').classList.toggle('active');
-    } else {
-        document.querySelector(':root').style.setProperty('--color_1', "#7286D3");
-        document.querySelector(':root').style.setProperty('--color_3', "#E5E0FF");
-        document.querySelector(':root').style.setProperty('--color_4', "#FFF2F2");
-        document.querySelector(':root').style.setProperty('--color_5', "#fff");
-        document.querySelector(':root').style.setProperty('--color_6', "#000");
-        mode = 0;
-        document.querySelector('.fa-sun').classList.toggle('active');
-        document.querySelector('.fa-moon').classList.remove('active');
+function showImgof(picture) {
+    if (picture.classList.contains("landscape")) {
+        picture.classList.toggle("showing-ls");
+    } else if (picture.classList.contains("portrait")) {
+        picture.classList.toggle("showing-pt");
     }
+
+    transparent_bg.style.display = "block";
+    showing_now = picture
 }
 
-function imgFull(img) {
-    img.classList.toggle('img-box-active');
-    setTimeout (function () {
-        img.classList.remove('img-box-active');
-    }, 2000);
-}
+function hideImg() {
+    transparent_bg.style.display = "none";
+    
+    if (showing_now.classList.contains("landscape")) {
+        showing_now.classList.remove("showing-ls");
+    } else if (showing_now.classList.contains("portrait")) {
+        showing_now.classList.remove("showing-pt");
+    }
 
-function paperFull(img) {
-    img.classList.toggle('paper-con-active');
-    setTimeout (function () {
-        img.classList.remove('paper-con-active');
-    }, 2000);
+    showing_now = null
 }
