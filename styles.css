@@ -24,9 +24,6 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-
-    background-image: url(pic/pexels-danielabsi-952670.jpg);
-    background-size: 100%;
 }
 
 body {
@@ -39,6 +36,7 @@ body {
 .page {
     position: absolute;
 
+    width: auto;
     height: 95%;
     left: 50%;
     top: 50%;
@@ -73,6 +71,11 @@ body {
     width: 100%;
     height: 100%;
 
+    background-image: url(pic/pexels-tirachard-kumtanom-112571-450055.jpg);
+    background-size: 100%;
+    filter: contrast(120%) brightness(80%);
+
+    z-index: 0;
 }
 
 .name {
@@ -80,6 +83,7 @@ body {
     
     display: flex;
     align-items: center;
+    justify-content: center;
 
     top: 0;
     margin-left: 50%;
@@ -88,14 +92,31 @@ body {
     font-size: 6rem;
     color: var(--color_5);
     height: 10rem;
+    width: 100%;
+}
+
+.name-alt {
+    position: absolute;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    top: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: 6rem;
+    color: var(--color_5);
+    height: 10rem;
+    width: 100%;
 }
 
 .navigation-bar {
     position: absolute;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
     top: 10rem;
     margin-left: 50%;
@@ -109,19 +130,52 @@ body {
     height: 5rem;
 }
 
-.navigation-bar .nav {
+.nav-bar-short {
+    position: absolute;
+
+    display: none;
+
+    top: 10rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 10rem);
+    border-top: 1px solid var(--color_5);
+    border-bottom: 1px solid var(--color_5);
+
+    font-size: 4rem;
     color: var(--color_5);
-    background: none;
+    height: 5rem;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+}
+
+.nav-bar-short.selected {
+    width: 100%;
+    color: var(--color_6);
+    background: var(--color_4);
+}
+
+.navigation-bar .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color_5);
 
     transition: all 0.3s;
 }
 
 .navigation-bar .nav:hover {
-    border-bottom: 1px solid var(--color_5);
+    background: var(--color_4);
+    color: var(--color_6);
 }
 
 .navigation-bar .active {
-    border-bottom: 3px solid var(--color_5);
+    background: var(--color_5);
+    color: var(--color_6);
 }
 
 
@@ -225,6 +279,7 @@ div.image h3.pic-name {
     font-size: 1.5rem;
     padding-block: 0.5rem;
     padding-inline: 2rem;
+    text-align: center;
     color: var(--color_6);
     background: rgba(0, 0, 0, 0.9);
 }
@@ -270,7 +325,7 @@ div.image h3.pic-name {
 
 .one {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     pointer-events: none;
 }
 
@@ -278,8 +333,8 @@ div.image h3.pic-name {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    overflow-x: hidden;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
 }
 
 .video-container .indi-vid {
@@ -287,11 +342,14 @@ div.image h3.pic-name {
     height: 100%;
     display: flex;
     justify-content: center;
-    overflow-x: hidden;
+    align-items: center;
+    overflow: hidden;
+
+    border: 1px solid var(--color_5);
 }
 
 .indi-vid video {
-    height: 100%;
+    width: 100%;
 }
 
 /* slide two */
@@ -384,6 +442,7 @@ div.image h3.pic-name {
     flex-direction: column;
     justify-content: center;
 
+    text-align: justify;
     font-size: 2rem;
     max-width: 70%;
     min-height: 60%;
@@ -417,6 +476,10 @@ div.image h3.pic-name {
     gap: 2rem;
 }
 
+.seven .content h3 {
+    font-size: 3rem;
+}
+
 .seven .content a p:hover {
     text-decoration: underline;
 }
@@ -443,12 +506,12 @@ div.image h3.pic-name {
 
 .bkp {
     top: 7%;
-    left: 0%;
+    right: 0%;
 }
 
 .ptt {
     top: 29%;
-    left: 10%;
+    right: 0%;
 }
 
 .mcg {
@@ -458,5 +521,245 @@ div.image h3.pic-name {
 
 .kse {
     top: 73%;
-    right: 10%;
+    right: 0%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .page {
+        width: auto;
+        height: 95%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .page {
+        width: 95%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .name {
+        display: none;
+    }
+    
+    .name-alt {
+        display: flex;
+    }
+
+    .page {
+        width: auto;
+        height: 95%;
+        aspect-ratio: 9/16;
+    }
+
+    .navigation-bar {
+        display: none !important;
+        top: 15rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: calc(100% - 15rem);
+        width: 100%;
+        font-size: 4rem;
+        background: var(--color_6);
+        z-index: 2;
+
+        border: none;
+    }
+
+    .show-menu {
+        display: grid !important;
+        animation-name: fade-in;
+        animation-duration: 1s;
+        animation-direction: forwards;
+    }
+
+
+    .nav-bar-short {
+        display: block;
+    }
+
+    .navigation-bar .nav {
+        width: 100%;
+        padding: 5rem;
+        border-bottom: 1px solid var(--color_5);
+    }
+
+    .navigation-bar .nav br {
+        display: none;
+    }
+
+    .big-slides {
+        margin-top: 15rem;
+        height: calc(100% - 15rem);
+    }
+
+    .video-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    div.landscape {
+        height: 30%;
+    }
+    
+    div.portrait {
+        height: 45%;
+    }
+    
+    div.showing-pt {
+        height: 90%;
+    }
+    
+    div.showing-ls {
+        height: 60%;
+        transform-origin: center;
+        transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    }
+    
+    div.image h3.pic-name {
+        font-size: 2.3rem;
+    }
+
+    /* slide two */
+
+    .saawaan1 {
+        top: 3%;
+        left: 0%;
+    }
+
+    .saawaan2 {
+        top: 5%;
+        left: 47%;
+    }
+
+    .ici1 {
+        top: 58%;
+        left: 49%;
+    }
+
+    .ici2 {
+        top: 50%;
+        left: -6%;
+    }
+
+    /* slide three */
+
+    .michelin {
+        top: 3%;
+        left: 0%;
+    }
+
+    .flb {
+        top: 30.5%;
+        left: 49%;
+    }
+
+    .magnum {
+        top: 72%;
+        left: -5%;
+    }
+
+    /* slide four */
+
+    .michelin-hny {
+        top: 7%;
+        left: 10%;
+    }
+
+    .arla {
+        top: 63%;
+        left: 17%;
+    }
+
+    /* slide five */
+
+    .may-garden {
+        top: 3%;
+        left: 14%;
+    }
+
+    .por {
+        top: 73%;
+        left: -5%;
+    }
+
+    .kiti-panit {
+        top: 30%;
+        left: 49%;
+    }
+
+    /* slide six */
+    .six .content {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .six div.portrait {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        height: 35%;
+        width: auto;
+        overflow: hidden;
+    }
+
+    .six img {
+        height: auto;
+        width: 100%;
+    }
+
+    .six p {
+        max-width: 100%;
+        min-height: 0;
+    }
+
+    /* slide seven */
+
+    .seven .content a {
+        font-size: 5rem;
+    }
+
+    .seven .content h3 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-aspect-ratio: 9/16) {
+    .page {
+        width: 95%;
+        height: auto;
+    }
+}
+
+
+/* font size */
+
+@media (max-width: 1024px) {
+    :root {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        font-size: 44.4%;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 33.3%;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        font-size: 27%;
+    }
+}
+
+@media (max-width: 344px) {
+    :root {
+        font-size: 23%;
+    }
 }

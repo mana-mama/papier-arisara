@@ -4,7 +4,7 @@ var showing_now;
 
 let all_videos = document.querySelectorAll('video');
 for (i=0; i<all_videos.length; i++) {
-    all_videos[i].playbackRate = 0.5;
+    all_videos[i].playbackRate = 0.25;
 }
 
 function showImgof(picture) {
@@ -27,5 +27,25 @@ function hideImg() {
         showing_now.classList.remove("showing-pt");
     }
 
-    showing_now = null
+    showing_now = null;
 }
+
+let nav_bar = document.querySelector(".navigation-bar");
+let menu = document.querySelector(".nav-bar-short");
+console.log(nav_bar)
+
+function toggleNavbar() {
+    menu.classList.toggle('selected');
+    nav_bar.classList.toggle('show-menu');
+}
+
+let root = document.querySelector(':root');
+
+function adjustFontSize() {
+    const screenWidth = window.innerWidth;
+    const fontSize = Math.max(24, 62.5/1524 * screenWidth);
+    root.style.fontSize = fontSize + "%";
+}
+
+window.addEventListener("resize", adjustFontSize);
+window.addEventListener("load", adjustFontSize);
